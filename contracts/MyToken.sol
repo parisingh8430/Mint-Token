@@ -9,7 +9,6 @@ contract MyToken is ERC20 {
     
     constructor(string memory name, string memory symbol) ERC20(name, symbol) {
         owner = msg.sender;
-        _mint(msg.sender, 100 * 10**uint(decimals()));
     }
 
     function mint(address account, uint256 amount) public {
