@@ -19,5 +19,10 @@ contract MyToken is ERC20 {
     function burn(uint256 amount) public {
         _burn(msg.sender, amount);
     }
+// Explicit transfer function
+    function transfer(address to, uint256 amount) public override returns (bool) {
+        // Call the parent ERC20 transfer function
+        return super.transfer(to, amount);
+    } 
     
 }
